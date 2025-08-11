@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>📅 Plano 6 Meses — Game Hacking (By Moreto)</title>
-<meta name="description" content="Quadro estilo Trello/Notion com plano completo de 6 meses para estudar game hacking. Checklists, links, buscas rápidas, anotações e exportação de progresso."/>
+<meta name="description" content="Plano de estudo moderno e completo para game hacking, incluindo métodos 2025, módulos avançados e técnicas indetectáveis."/>
 <meta name="color-scheme" content="dark light">
 <style>
   :root{
@@ -30,20 +30,27 @@
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
-    margin:0; background:linear-gradient(180deg, #0a0e13 0%, #0b1119 100%);
-    color:var(--text); font-family:var(--font); line-height:1.45;
+    margin:0;
+    background:linear-gradient(180deg, #0a0e13 0%, #0b1119 100%);
+    color:var(--text);
+    font-family:var(--font);
+    line-height:1.45;
   }
   header{
-    position:sticky; top:0; z-index:10; backdrop-filter:saturate(140%) blur(8px);
-    background:rgba(10, 14, 19, .7); border-bottom:1px solid var(--border);
+    position:sticky; top:0; z-index:10;
+    backdrop-filter:saturate(140%) blur(8px);
+    background:rgba(10, 14, 19, .7);
+    border-bottom:1px solid var(--border);
   }
   .wrap{max-width:1100px; margin:0 auto; padding:20px}
-  .topbar{display:flex; gap:14px; align-items:center; justify-content:space-between;}
-  .brand{display:flex; gap:12px; align-items:center}
+  .topbar{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+  .brand{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
   .logo{
     width:40px; height:40px; border-radius:12px;
     background: radial-gradient(120% 120% at 100% 0%, #203b63 0%, #0f1a2a 45%, #0a1019 100%);
-    display:grid; place-items:center; box-shadow: var(--shadow); border:1px solid var(--border);
+    display:grid; place-items:center;
+    box-shadow: var(--shadow);
+    border:1px solid var(--border);
   }
   .logo svg{opacity:.9}
   h1{font-size: clamp(18px, 2.6vw, 24px); margin:0}
@@ -59,7 +66,7 @@
   .btn-warn{background:linear-gradient(180deg,#2a2212,#1e1910); border-color:#3b2f14}
   .btn-danger{background:linear-gradient(180deg,#3d1717,#2a1111); border-color:#4c1f1f}
 
-  /* GRID CENTRALIZADO */
+  /* GRID */
   .wrap.grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -68,7 +75,10 @@
     gap: 20px;
     align-items: start;
   }
-  @media (max-width: 880px){ .wrap.grid{grid-template-columns:1fr} }
+  @media (max-width: 880px){
+    .wrap.grid{grid-template-columns:1fr}
+    .side{position:relative; top:0}
+  }
 
   /* Sidebar */
   .side{
@@ -117,9 +127,10 @@
   summary{
     list-style:none; padding:16px; display:flex; align-items:center; justify-content:space-between; gap:8px; cursor:pointer; user-select:none;
     background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+    flex-wrap:wrap;
   }
   summary::-webkit-details-marker{display:none}
-  .m-title{display:flex; gap:10px; align-items:center}
+  .m-title{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
   .m-title h2{font-size:18px; margin:0}
   .goal{color:var(--muted); font-size:13px}
   .caret{transform: rotate(0deg); transition:.2s}
@@ -130,7 +141,7 @@
     border:1px solid var(--border); border-radius: var(--radius-sm); background: #0d1420;
     padding: 14px; display:grid; gap:10px;
   }
-  .w-head{display:flex; align-items:center; justify-content:space-between; gap:10px}
+  .w-head{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap}
   .w-title{display:flex; flex-wrap:wrap; align-items:center; gap:8px}
   .w-title h3{margin:0; font-size:16px}
   .tags{display:flex; gap:6px; flex-wrap:wrap}
@@ -146,9 +157,7 @@
     text-decoration:none; color:#c8d8ff; background:#0f1830; border:1px solid #1d2a49; padding:8px 10px; border-radius:10px; font-size:13px;
   }
   .links a:hover{border-color:#2a3f6e}
-  .notes{
-    margin-top:6px; display:grid; gap:6px;
-  }
+  .notes{margin-top:6px; display:grid; gap:6px}
   .notes textarea{
     width:100%; min-height:80px; background:#0a111b; color:var(--text); border:1px solid var(--border); border-radius:10px; padding:10px; font-family:var(--mono);
   }
@@ -179,21 +188,20 @@
       </div>
       <div>
         <h1>Plano Completo — 6 Meses para se tornar Game Hacker</h1>
-        <h1>By moreto</h1>
-        <div class="goal">Organizado por <b>Mês → Semana → Tarefas</b> com links e dicas de busca</div>
+        <div class="goal">Organizado por <b>Mês → Semana → Tarefas</b> com links, dicas e métodos atualizados para 2025</div>
       </div>
     </div>
     <div class="actions">
       <button class="btn btn-ok" id="btn-mark-all">Marcar tudo</button>
       <button class="btn btn-warn" id="btn-clear-all">Limpar checks</button>
       <button class="btn btn-accent" id="btn-export">Exportar progresso</button>
+      <button class="btn btn-accent" id="btn-export-notes">Exportar anotações</button>
       <label class="btn" for="file-import" style="cursor:pointer">Importar</label>
       <input id="file-import" type="file" accept="application/json" hidden />
       <button class="btn btn-danger" id="btn-reset">Reset total</button>
     </div>
   </div>
 </header>
-
 <div class="wrap grid">
   <aside class="side">
     <div class="meta">
@@ -202,20 +210,17 @@
         <span id="meta-done">0</span>/<span id="meta-total">0</span> tarefas concluídas
       </div>
       <div class="progressbar"><div class="bar" id="meta-bar"></div></div>
-
       <div class="kpi">
-        <div class="k"><small class="muted">Semanas</small><b>24</b></div>
-        <div class="k"><small class="muted">Módulos</small><b>6</b></div>
-        <div class="k"><small class="muted">Objetivo</small><b>ESP + Aimbot + Kernel</b></div>
+        <div class="k"><small class="muted">Semanas</small><b>24+</b></div>
+        <div class="k"><small class="muted">Módulos</small><b>8</b></div>
+        <div class="k"><small class="muted">Objetivo</small><b>ESP + Aimbot + Kernel + Anti-AI</b></div>
         <div class="k"><small class="muted">Duração</small><b>~180 dias</b></div>
       </div>
-
       <div class="notice">
         <b>⚠️ Aviso Ético/Legal</b><br>
         Este material é para <b>estudo</b> e <b>pesquisa</b> em ambientes controlados (jogos offline, projetos pessoais e engenharia reversa educacional).
         Respeite ToS/EULAs e leis locais. Não use para obter vantagem injusta em jogos online.
       </div>
-
       <div class="searchbox">
         <label for="global-search"><b>🔎 Busca Global</b></label>
         <input id="global-search" type="text" placeholder="Ex.: WorldToScreen Unreal Engine" />
@@ -229,29 +234,7 @@
       </div>
     </div>
   </aside>
-
   <main>
-    <div class="controls">
-      <div class="filters">
-        <label class="ghost">Filtrar:</label>
-        <select id="filter-month">
-          <option value="all">Todos os meses</option>
-          <option value="1">Mês 1</option>
-          <option value="2">Mês 2</option>
-          <option value="3">Mês 3</option>
-          <option value="4">Mês 4</option>
-          <option value="5">Mês 5</option>
-          <option value="6">Mês 6</option>
-        </select>
-        <select id="filter-status">
-          <option value="any">Qualquer status</option>
-          <option value="open">Com tarefas abertas</option>
-          <option value="done">Todas concluídas</option>
-        </select>
-        <input id="filter-text" type="text" placeholder="Filtrar por texto (ex.: MinHook, IOCTL)" />
-      </div>
-    </div>
-
     <!-- ==================== MÊS 1 ==================== -->
     <details class="month" open data-month="1">
       <summary>
@@ -259,732 +242,427 @@
           <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
           <div>
             <h2>Mês 1 – Fundamentos Avançados</h2>
-            <div class="goal">Meta: dominar C++ aplicado a cheats, entender engenharia reversa e leitura de memória.</div>
+            <div class="goal">C++ aplicado a cheats, engenharia reversa e leitura de memória.</div>
           </div>
         </div>
         <div class="muted">Semanas 1–4</div>
       </summary>
       <div class="weeks">
-
         <!-- Semana 1 -->
         <section class="week" data-week="1">
           <div class="w-head">
             <div class="w-title">
-              <h3>Semana 1 – Revisão de C++ para Game Hacking</h3>
-              <div class="tags">
-                <span class="tag">C++</span><span class="tag">Memória</span>
-              </div>
+              <h3>Semana 1 – Revisão de C++ e Memória</h3>
+              <div class="tags"><span class="tag">C++</span><span class="tag">Memória</span></div>
             </div>
             <div class="links">
-              <a href="https://www.geeksforgeeks.org/cpp-pointers/" target="_blank" rel="noopener">C++ Pointers — GeeksForGeeks</a>
-              <a href="https://www.google.com/search?q=ReadProcessMemory+site%3Aguidedhacking.com" target="_blank" rel="noopener">ReadProcessMemory — GuidedHacking</a>
+              <a href="https://www.geeksforgeeks.org/cpp-pointers/" target="_blank">C++ Pointers</a>
+              <a href="https://guidedhacking.com/threads/readprocessmemory.14777/" target="_blank">RPM/WPM GH</a>
             </div>
           </div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" />
-              <div><b>Ponteiros, referências, casting</b> (<code>reinterpret_cast</code>)</div>
-              <small class="muted">Revisar ponteiros, ref vs ptr, conversões seguras.</small>
-            </label>
-            <label class="task"><input type="checkbox" />
-              <div><b>Structs e classes</b> para representar dados do jogo</div>
-              <small class="muted">Pratique modelar um <code>Player</code> com posição/vida.</small>
-            </label>
-            <label class="task"><input type="checkbox" />
-              <div><b>RPM/WPM</b> — <code>ReadProcessMemory</code> / <code>WriteProcessMemory</code></div>
-              <small class="muted">Faça exemplos em um processo de testes.</small>
-            </label>
-          </div>
-          <div class="notes">
-            <label class="muted">Anotações / Offsets (Semana 1)</label>
-            <textarea placeholder="Cole aqui resumos, structs e offsets..." ></textarea>
+            <label class="task"><input type="checkbox" /><div>Ponteiros, referências, casting (<code>reinterpret_cast</code>)</div></label>
+            <label class="task"><input type="checkbox" /><div>Structs e classes para dados do jogo</div></label>
+            <label class="task"><input type="checkbox" /><div>RPM/WPM — testes em processos simples</div></label>
           </div>
         </section>
 
         <!-- Semana 2 -->
         <section class="week" data-week="2">
           <div class="w-head">
-            <div class="w-title">
-              <h3>Semana 2 – Memory Reader básico</h3>
-              <div class="tags">
-                <span class="tag">AssaultCube</span><span class="tag">RPM</span>
-              </div>
-            </div>
-            <div class="links">
-              <a href="https://guidedhacking.com/threads/assaultcube-cheat-engine-guide.8911/" target="_blank" rel="noopener">AssaultCube CE Guide</a>
-              <a href="https://assault.cubers.net/" target="_blank" rel="noopener">Download AssaultCube</a>
-            </div>
+            <div class="w-title"><h3>Semana 2 – Memory Reader básico</h3></div>
+            <div class="links"><a href="https://guidedhacking.com/threads/assaultcube-cheat-engine-guide.8911/" target="_blank">AC CE Guide</a></div>
           </div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" />
-              <div><b>Criar leitor de memória</b> para jogo simples (AssaultCube)</div>
-              <small class="muted">Procure base address e módulos.</small>
-            </label>
-            <label class="task"><input type="checkbox" />
-              <div><b>Imprimir coordenadas</b> do player no console</div>
-              <small class="muted">Verifique XYZ atualizando em tempo real.</small>
-            </label>
-          </div>
-          <div class="notes">
-            <label class="muted">Anotações / Offsets (Semana 2)</label>
-            <textarea placeholder="Base address, entity list, local player, etc."></textarea>
+            <label class="task"><input type="checkbox" /><div>Localizar base address e módulos</div></label>
+            <label class="task"><input type="checkbox" /><div>Imprimir coordenadas XYZ do player</div></label>
           </div>
         </section>
 
         <!-- Semana 3 -->
         <section class="week" data-week="3">
           <div class="w-head">
-            <div class="w-title">
-              <h3>Semana 3 – Introdução à Engenharia Reversa</h3>
-              <div class="tags"><span class="tag">x64dbg</span><span class="tag">IDA Free</span><span class="tag">Assembly</span></div>
-            </div>
+            <div class="w-title"><h3>Semana 3 – Engenharia Reversa Básica</h3></div>
             <div class="links">
-              <a href="https://x64dbg.com/#start" target="_blank" rel="noopener">x64dbg — Tutorial</a>
-              <a href="https://www.google.com/search?q=assembly+crash+course+site%3Aguidedhacking.com" target="_blank" rel="noopener">Assembly Basics — GuidedHacking</a>
+              <a href="https://x64dbg.com/#start" target="_blank">x64dbg</a>
+              <a href="https://guidedhacking.com/forums/assembly-language-tutorials.26/" target="_blank">Assembly GH</a>
             </div>
           </div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" />
-              <div><b>Instalar e aprender básico</b> de x64dbg e IDA Free</div>
-              <small class="muted">Breakpoints, call stack, módulos, strings.</small>
-            </label>
-            <label class="task"><input type="checkbox" />
-              <div><b>Assembly x86/x64</b> — instruções, registradores, calling conventions</div>
-              <small class="muted">Entenda <code>push/pop</code>, <code>mov</code>, <code>call</code>, <code>jmp</code>.</small>
-            </label>
-            <label class="task"><input type="checkbox" />
-              <div><b>Estruturas comuns</b> (UWorld, GameInstance, PlayerController)</div>
-              <small class="muted">Mapeie mentalmente a hierarquia de um jogo UE-like.</small>
-            </label>
-          </div>
-          <div class="notes">
-            <label class="muted">Anotações (Semana 3)</label>
-            <textarea placeholder="Endereços interessantes, signatures, funções de update..."></textarea>
+            <label class="task"><input type="checkbox" /><div>Instalar e usar x64dbg/IDA Free</div></label>
+            <label class="task"><input type="checkbox" /><div>Aprender assembly x86/x64</div></label>
+            <label class="task"><input type="checkbox" /><div>Mapear estruturas comuns (UWorld, etc.)</div></label>
           </div>
         </section>
 
         <!-- Semana 4 -->
         <section class="week" data-week="4">
           <div class="w-head">
-            <div class="w-title">
-              <h3>Semana 4 – Dump e Estruturas</h3>
-              <div class="tags"><span class="tag">Dump</span><span class="tag">Offsets</span><span class="tag">ReClass</span></div>
-            </div>
+            <div class="w-title"><h3>Semana 4 – Dumps e Offsets</h3></div>
             <div class="links">
-              <a href="https://processhacker.sourceforge.io/" target="_blank" rel="noopener">Process Hacker</a>
-              <a href="https://github.com/ReClassNET/ReClass.NET" target="_blank" rel="noopener">ReClass.NET</a>
+              <a href="https://processhacker.sourceforge.io/" target="_blank">Process Hacker</a>
+              <a href="https://github.com/ReClassNET/ReClass.NET" target="_blank">ReClass.NET</a>
             </div>
           </div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" />
-              <div><b>Criar dump</b> do jogo</div>
-              <small class="muted">Analise seções, IAT, strings úteis.</small>
-            </label>
-            <label class="task"><input type="checkbox" />
-              <div><b>Identificar offsets</b> importantes (posição, vida)</div>
-              <small class="muted">Valide offsets em runtime.</small>
-            </label>
-            <label class="task"><input type="checkbox" />
-              <div><b>Documentar</b> em Notion/OneNote</div>
-              <small class="muted">Crie tabelas: nome, caminho, tipo, exemplo de leitura.</small>
-            </label>
-          </div>
-          <div class="notes">
-            <label class="muted">Anotações (Semana 4)</label>
-            <textarea placeholder="Estruturas, campos, e observações."></textarea>
+            <label class="task"><input type="checkbox" /><div>Criar dump do jogo</div></label>
+            <label class="task"><input type="checkbox" /><div>Identificar offsets (posição, vida)</div></label>
           </div>
         </section>
-
       </div>
     </details>
 
-    <!-- ==================== MÊS 2 ==================== -->
-    <details class="month" data-month="2">
+    <!-- ==================== NOVO MÓDULO 2025 ==================== -->
+    <details class="month" data-month="ai-bypass">
       <summary>
         <div class="m-title">
-          <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
+          <svg class="caret" width="16" height="16"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
           <div>
-            <h2>Mês 2 – Externo + Interno</h2>
-            <div class="goal">Meta: criar cheats externos e iniciar injeção interna.</div>
+            <h2>Módulo 2025 – Anti-AI Anticheat Bypass</h2>
+            <div class="goal">Evasão contra detecção por Machine Learning e heurísticas modernas.</div>
           </div>
         </div>
-        <div class="muted">Semanas 5–8</div>
+        <div class="muted">Semanas A1–A2</div>
       </summary>
       <div class="weeks">
-
-        <!-- Semana 5 -->
-        <section class="week" data-week="5">
-          <div class="w-head">
-            <div class="w-title"><h3>Semana 5 – Overlay Externo</h3>
-              <div class="tags"><span class="tag">ImGui</span><span class="tag">DX11</span><span class="tag">ESP</span></div>
-            </div>
-            <div class="links">
-              <a href="https://www.google.com/search?q=DirectX11+overlay+imgui+site%3Aguidedhacking.com" target="_blank" rel="noopener">ImGui DX11 Overlay — GH</a>
-            </div>
-          </div>
+        <section class="week" data-week="A1">
+          <div class="w-head"><div class="w-title"><h3>Semana A1 – Análise de modelos</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Aprender ImGui + DirectX11</b></div><small class="muted">Render básico, fonte, janelas.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Criar overlay transparente</b></div><small class="muted">Clique-through, topmost.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>ESP básico</b> (box, nome, distância)</div><small class="muted">Atualização por frame.</small></label>
+            <label class="task"><input type="checkbox" /><div>Estudar pipelines de detecção AI-based</div></label>
+            <label class="task"><input type="checkbox" /><div>Identificar features coletadas pelo anticheat</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 5)</label><textarea></textarea></div>
         </section>
-
-        <!-- Semana 6 -->
-        <section class="week" data-week="6">
-          <div class="w-head">
-            <div class="w-title"><h3>Semana 6 – WorldToScreen</h3>
-              <div class="tags"><span class="tag">Math</span><span class="tag">Camera</span></div>
-            </div>
-            <div class="links">
-              <a href="https://www.google.com/search?q=WorldToScreen+Unreal+Engine+site%3Aunknowncheats.me" target="_blank" rel="noopener">WorldToScreen UE — UC</a>
-            </div>
-          </div>
+        <section class="week" data-week="A2">
+          <div class="w-head"><div class="w-title"><h3>Semana A2 – Evasão prática</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Implementar WorldToScreen</b></div><small class="muted">Matriz de visão/projeção.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>ESP por câmera</b></div><small class="muted">Cálculo de FOV/visibilidade.</small></label>
+            <label class="task"><input type="checkbox" /><div>Implementar randomização de padrões</div></label>
+            <label class="task"><input type="checkbox" /><div>Obfuscação runtime e spoof de métricas</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 6)</label><textarea></textarea></div>
         </section>
-
-        <!-- Semana 7 -->
-        <section class="week" data-week="7">
-          <div class="w-head">
-            <div class="w-title"><h3>Semana 7 – DLL Injection</h3>
-              <div class="tags"><span class="tag">LoadLibrary</span><span class="tag">Internal</span></div>
-            </div>
-            <div class="links">
-              <a href="https://guidedhacking.com/threads/dll-injection-methods.8414/" target="_blank" rel="noopener">DLL Injection — GH</a>
-            </div>
-          </div>
-          <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Criar injetor com LoadLibrary</b></div><small class="muted">Processo-alvo, WriteProcessMemory, CreateRemoteThread.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>DLL que imprime texto</b> no jogo</div><small class="muted">Testar attach/detach.</small></label>
-          </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 7)</label><textarea></textarea></div>
-        </section>
-
-        <!-- Semana 8 -->
-        <section class="week" data-week="8">
-          <div class="w-head">
-            <div class="w-title"><h3>Semana 8 – MinHook</h3>
-              <div class="tags"><span class="tag">Hook</span><span class="tag">Render</span></div>
-            </div>
-            <div class="links">
-              <a href="https://github.com/TsudaKageyu/minhook" target="_blank" rel="noopener">MinHook — GitHub</a>
-            </div>
-          </div>
-          <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Aprender MinHook</b> para interceptar funções</div><small class="muted">Criar/enable hooks com trampolines.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Hookar render</b> p/ desenhar ESP interno</div><small class="muted">SwapChain/Present/EndScene (dependendo da API).</small></label>
-          </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 8)</label><textarea></textarea></div>
-        </section>
-
       </div>
     </details>
 
-    <!-- ==================== MÊS 3 ==================== -->
-    <details class="month" data-month="3">
+    <!-- ==================== MÓDULO 2025 – Kernel Dumper Avançado ==================== -->
+    <!-- Este módulo é para lidar com anticheats que protegem processos no nível kernel.
+         O objetivo é conseguir criar dumps limpos, reconstruindo o binário (PE repair)
+         mesmo quando o anticheat corta headers, importa funções dinamicamente ou
+         aplica obfuscação na seção .text. Essencial para analisar jogos protegidos por
+         EAC, BE e Vanguard, que frequentemente usam mapeamento de imagem customizado. -->
+    <details class="month" data-month="kernel-dumper">
       <summary>
         <div class="m-title">
-          <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
+          <svg class="caret" width="16" height="16"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
           <div>
-            <h2>Mês 3 – Anticheats</h2>
-            <div class="goal">Meta: entender e começar a lidar com proteções.</div>
+            <h2>Módulo 2025 – Kernel Dumper Avançado</h2>
+            <div class="goal">Dump de processos protegidos e reconstrução de PE contra anticheats modernos.</div>
           </div>
         </div>
-        <div class="muted">Semanas 9–12</div>
+        <div class="muted">Semanas K1–K2</div>
       </summary>
       <div class="weeks">
-
-        <!-- Semana 9 -->
-        <section class="week" data-week="9">
-          <div class="w-head">
-            <div class="w-title"><h3>Semana 9 – Como funcionam</h3>
-              <div class="tags"><span class="tag">User/Kernel</span><span class="tag">EAC</span><span class="tag">BE</span><span class="tag">Vanguard</span></div>
-            </div>
-            <div class="links">
-              <a href="https://www.google.com/search?q=anticheat+architecture+site%3Aguidedhacking.com" target="_blank" rel="noopener">Anticheat Architecture — GH</a>
-            </div>
-          </div>
+        <section class="week" data-week="K1">
+          <div class="w-head"><div class="w-title"><h3>Semana K1 – Preparação</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Estudar Usermode x Kernelmode</b></div><small class="muted">Privilégios, ring3 vs ring0 (conceitual).</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Ler sobre Ricochet, EAC, BattlEye, Vanguard</b></div><small class="muted">Componentes, drivers, comunicação.</small></label>
+            <label class="task"><input type="checkbox" /><div>Configurar ambiente WDK + kdmapper atualizado</div></label>
+            <label class="task"><input type="checkbox" /><div>Estudo de seções PE e import table</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 9)</label><textarea></textarea></div>
         </section>
-
-        <!-- Semana 10 -->
-        <section class="week" data-week="10">
-          <div class="w-head">
-            <div class="w-title"><h3>Semana 10 – Detecção de Cheats</h3>
-              <div class="tags"><span class="tag">Signatures</span><span class="tag">Hash</span><span class="tag">Módulos</span></div>
-            </div>
-            <div class="links">
-              <a href="https://processhacker.sourceforge.io/" target="_blank" rel="noopener">Process Hacker — Módulos</a>
-            </div>
-          </div>
+        <section class="week" data-week="K2">
+          <div class="w-head"><div class="w-title"><h3>Semana K2 – Dump & Rebuild</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Aprender assinaturas e hash</b></div><small class="muted">Padrões estáticos, varreduras de memória.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Analisar módulos carregados</b> (ambiente offline)</div><small class="muted">Enumere DLLs, verificações comuns.</small></label>
+            <label class="task"><input type="checkbox" /><div>Implementar leitura direta em kernelmode</div></label>
+            <label class="task"><input type="checkbox" /><div>Reconstruir headers e seções danificadas</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 10)</label><textarea></textarea></div>
         </section>
-
-        <!-- Semana 11 -->
-        <section class="week" data-week="11">
-          <div class="w-head">
-            <div class="w-title"><h3>Semana 11 – Kernel Driver</h3>
-              <div class="tags"><span class="tag">WDK</span><span class="tag">IOCTL</span><span class="tag">kdmapper</span></div>
-            </div>
-            <div class="links">
-              <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">Windows Driver Kit</a>
-              <a href="https://github.com/TheCruZ/kdmapper" target="_blank" rel="noopener">KDMapper</a>
-            </div>
-          </div>
-          <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Instalar WDK</b></div><small class="muted">Set up do ambiente.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Criar driver Hello World</b></div><small class="muted">Serviço, assinatura de teste.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Comunicar via IOCTL</b></div><small class="muted">Canal usermode ↔ kernelmode.</small></label>
-          </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 11)</label><textarea></textarea></div>
-        </section>
-
-        <!-- Semana 12 -->
-        <section class="week" data-week="12">
-          <div class="w-head">
-            <div class="w-title"><h3>Semana 12 – Bypass básico</h3>
-              <div class="tags"><span class="tag">Kernel</span><span class="tag">Leitura</span></div>
-            </div>
-            <div class="links">
-              <a href="https://www.google.com/search?q=kernelmode+game+memory+reading+site%3Aguidedhacking.com" target="_blank" rel="noopener">Kernelmode reading — GH</a>
-            </div>
-          </div>
-          <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Ler memória</b> de jogo protegido usando driver (laboratório)</div><small class="muted">Ambiente de testes controlado.</small></label>
-          </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 12)</label><textarea></textarea></div>
-        </section>
-
       </div>
     </details>
 
-    <!-- ==================== MÊS 4 ==================== -->
-    <details class="month" data-month="4">
+    <!-- ==================== MÓDULO 2025 – EFI Bootkit Loader ==================== -->
+    <!-- Focado em bypass total de inicialização de anticheats que se injetam no boot.
+         Carregar um driver antes do Windows (via UEFI) permite operar em um espaço
+         onde o anticheat ainda não está rodando. Ideal para cheats persistentes e
+         injetores invisíveis, mas requer ambiente controlado para testes. -->
+    <details class="month" data-month="efi-bootkit">
       <summary>
         <div class="m-title">
-          <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
+          <svg class="caret" width="16" height="16"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
           <div>
-            <h2>Mês 4 – Interno Avançado</h2>
-            <div class="goal">Meta: cheats internos completos.</div>
+            <h2>Módulo 2025 – EFI Bootkit Loader</h2>
+            <div class="goal">Injeção de driver antes do carregamento do Windows para stealth máximo.</div>
           </div>
         </div>
-        <div class="muted">Semanas 13–16</div>
+        <div class="muted">Semanas E1–E2</div>
       </summary>
       <div class="weeks">
-
-        <!-- Semanas 13-14 -->
-        <section class="week" data-week="13-14">
-          <div class="w-head">
-            <div class="w-title"><h3>Semanas 13–14 – Hooking avançado</h3>
-              <div class="tags"><span class="tag">VMT</span><span class="tag">Syscall</span><span class="tag">Trampoline</span><span class="tag">ESP Interno</span></div>
-            </div>
-          </div>
+        <section class="week" data-week="E1">
+          <div class="w-head"><div class="w-title"><h3>Semana E1 – Fundamentos UEFI</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>VMT Hook</b>, Syscall Hook, Trampoline Hook</div><small class="muted">Comparar prós/cons e estabilidade.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Criar ESP interno</b> otimizado</div><small class="muted">Culling, batching, cache.</small></label>
+            <label class="task"><input type="checkbox" /><div>Estudar arquitetura UEFI + SecureBoot</div></label>
+            <label class="task"><input type="checkbox" /><div>Preparar ambiente de teste em VM com firmware UEFI</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 13–14)</label><textarea></textarea></div>
         </section>
-
-        <!-- Semanas 15-16 -->
-        <section class="week" data-week="15-16">
-          <div class="w-head">
-            <div class="w-title"><h3>Semanas 15–16 – Aimbot</h3>
-              <div class="tags"><span class="tag">Predição</span><span class="tag">Bones</span></div>
-            </div>
-          </div>
+        <section class="week" data-week="E2">
+          <div class="w-head"><div class="w-title"><h3>Semana E2 – Loader EFI</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Criar aimbot interno</b> com predição</div><small class="muted">FOV, suavização, alvo mais próximo.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Usar bone positions</b> do jogo</div><small class="muted">Head/neck/chest; fallback quando invisível.</small></label>
+            <label class="task"><input type="checkbox" /><div>Implementar loader que mapeia driver antes do OS</div></label>
+            <label class="task"><input type="checkbox" /><div>Persistência no ESP (EFI System Partition)</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 15–16)</label><textarea></textarea></div>
         </section>
-
       </div>
     </details>
 
-    <!-- ==================== MÊS 5 ==================== -->
-    <details class="month" data-month="5">
+    <!-- ==================== MÓDULO 2025 – GPU Memory Cheats ==================== -->
+    <!-- Nova tendência: mover lógica de cheat ou armazenamento de dados críticos
+         para VRAM (memória da GPU) onde muitos anticheats não escaneiam.
+         Pode ser usado para armazenar offsets, cálculos de aimbot e até buffers
+         de ESP, reduzindo risco de detecção. -->
+    <details class="month" data-month="gpu-memory">
       <summary>
         <div class="m-title">
-          <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
+          <svg class="caret" width="16" height="16"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
           <div>
-            <h2>Mês 5 – Kernel & Proteções</h2>
-            <div class="goal">Meta: foco em arquitetura e hardening.</div>
+            <h2>Módulo 2025 – GPU Memory Cheats</h2>
+            <div class="goal">Armazenamento e execução parcial na VRAM para evitar varredura.</div>
           </div>
         </div>
-        <div class="muted">Semanas 17–20</div>
+        <div class="muted">Semanas G1–G2</div>
       </summary>
       <div class="weeks">
-
-        <!-- Semanas 17-18 -->
-        <section class="week" data-week="17-18">
-          <div class="w-head">
-            <div class="w-title"><h3>Semanas 17–18 – Driver avançado</h3>
-              <div class="tags"><span class="tag">Mapeamento Manual</span><span class="tag">Ocultação</span></div>
-            </div>
-          </div>
+        <section class="week" data-week="G1">
+          <div class="w-head"><div class="w-title"><h3>Semana G1 – Acesso à VRAM</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Mapeamento manual</b> de driver (conceitos)</div><small class="muted">Relocs, import resolver (estudo conceitual).</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Ocultação de driver</b> (conceitos)</div><small class="muted">Estratégias defensivas e limitações.</small></label>
+            <label class="task"><input type="checkbox" /><div>Estudar APIs CUDA/OpenCL para acesso de baixo nível</div></label>
+            <label class="task"><input type="checkbox" /><div>Testar escrita/leitura de buffers na GPU</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 17–18)</label><textarea></textarea></div>
         </section>
-
-        <!-- Semanas 19-20 -->
-        <section class="week" data-week="19-20">
-          <div class="w-head">
-            <div class="w-title"><h3>Semanas 19–20 – Proteção</h3>
-              <div class="tags"><span class="tag">VMProtect</span><span class="tag">Anti-Debug</span></div>
-            </div>
-          </div>
+        <section class="week" data-week="G2">
+          <div class="w-head"><div class="w-title"><h3>Semana G2 – Uso prático</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Ofuscação</b> com ferramentas tipo VMProtect (estudo)</div><small class="muted">Trade-offs de performance/manutenção.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Anti-debugging</b> conceitos</div><small class="muted">Checks comuns e como evitá-los em laboratório.</small></label>
+            <label class="task"><input type="checkbox" /><div>Armazenar offsets críticos na VRAM</div></label>
+            <label class="task"><input type="checkbox" /><div>Executar cálculo de aimbot via GPU</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 19–20)</label><textarea></textarea></div>
         </section>
-
       </div>
     </details>
 
-    <!-- ==================== MÊS 6 ==================== -->
-    <details class="month" data-month="6">
+    <!-- ==================== MÓDULO 2025 – Vision Aimbot YOLOv8/TensorRT ==================== -->
+    <!-- Uso de visão computacional (machine learning) para detectar inimigos em tela,
+         evitando hooks diretos no processo do jogo. YOLOv8 + TensorRT permitem
+         detecção extremamente rápida, inclusive para tracking 3D. -->
+    <details class="month" data-month="vision-aimbot">
       <summary>
         <div class="m-title">
-          <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
+          <svg class="caret" width="16" height="16"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
           <div>
-            <h2>Mês 6 – Exploração</h2>
-            <div class="goal">Meta: encontrar vulnerabilidades e consolidar projeto final.</div>
+            <h2>Módulo 2025 – Vision Aimbot YOLOv8/TensorRT</h2>
+            <div class="goal">Aimbot por visão computacional acelerado por GPU.</div>
           </div>
         </div>
-        <div class="muted">Semanas 21–24</div>
+        <div class="muted">Semanas V1–V2</div>
       </summary>
       <div class="weeks">
-
-        <!-- Semanas 21-22 -->
-        <section class="week" data-week="21-22">
-          <div class="w-head">
-            <div class="w-title"><h3>Semanas 21–22 – Vulnerabilidade</h3>
-              <div class="tags"><span class="tag">Dump</span><span class="tag">Debug</span></div>
-            </div>
-          </div>
+        <section class="week" data-week="V1">
+          <div class="w-head"><div class="w-title"><h3>Semana V1 – Treinamento de modelo</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Dump e exploração</b> de comandos debug</div><small class="muted">Pesquisa e prova de conceito em sandbox.</small></label>
+            <label class="task"><input type="checkbox" /><div>Coletar dataset de HUDs e inimigos</div></label>
+            <label class="task"><input type="checkbox" /><div>Treinar YOLOv8 com TensorRT para otimização</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 21–22)</label><textarea></textarea></div>
         </section>
-
-        <!-- Semanas 23-24 -->
-        <section class="week" data-week="23-24">
-          <div class="w-head">
-            <div class="w-title"><h3>Semanas 23–24 – Projeto final</h3>
-              <div class="tags"><span class="tag">Externo + Interno</span><span class="tag">Loader</span><span class="tag">HWID</span></div>
-            </div>
-          </div>
+        <section class="week" data-week="V2">
+          <div class="w-head"><div class="w-title"><h3>Semana V2 – Integração com overlay</h3></div></div>
           <div class="tasks">
-            <label class="task"><input type="checkbox" /><div><b>Cheat híbrido</b> (externo + interno)</div><small class="muted">Arquitetura modular; telemetria básica.</small></label>
-            <label class="task"><input type="checkbox" /><div><b>Loader c/ autenticação HWID</b></div><small class="muted">Fluxo: request → validar → liberar (ambiente de testes).</small></label>
+            <label class="task"><input type="checkbox" /><div>Integrar detecção com overlay ImGui</div></label>
+            <label class="task"><input type="checkbox" /><div>Implementar predição de movimento no overlay</div></label>
           </div>
-          <div class="notes"><label class="muted">Anotações (Sem. 23–24)</label><textarea></textarea></div>
         </section>
-
       </div>
     </details>
 
+    <!-- ==================== MÓDULO 2025 – ETW Bypass Injection ==================== -->
+    <!-- ETW (Event Tracing for Windows) é usado por anticheats para registrar eventos
+         suspeitos. Ao patchar funções-chave ou desativar provedores críticos, é
+         possível injetar código sem gerar logs. Técnica avançada e arriscada. -->
+    <details class="month" data-month="etw-bypass">
+      <summary>
+        <div class="m-title">
+          <svg class="caret" width="16" height="16"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
+          <div>
+            <h2>Módulo 2025 – ETW Bypass Injection</h2>
+            <div class="goal">Injeção sem alertar Event Tracing for Windows.</div>
+          </div>
+        </div>
+        <div class="muted">Semanas T1–T2</div>
+      </summary>
+      <div class="weeks">
+        <section class="week" data-week="T1">
+          <div class="w-head"><div class="w-title"><h3>Semana T1 – Entendendo ETW</h3></div></div>
+          <div class="tasks">
+            <label class="task"><input type="checkbox" /><div>Mapear provedores e eventos usados por anticheats</div></label>
+            <label class="task"><input type="checkbox" /><div>Monitorar ETW via logman/xperf</div></label>
+          </div>
+        </section>
+        <section class="week" data-week="T2">
+          <div class="w-head"><div class="w-title"><h3>Semana T2 – Bypass prático</h3></div></div>
+          <div class="tasks">
+            <label class="task"><input type="checkbox" /><div>Patch de funções ETW para suprimir logs</div></label>
+            <label class="task"><input type="checkbox" /><div>Injeção stealth após desativar eventos críticos</div></label>
+          </div>
+        </section>
+      </div>
+    </details>
 
-    <!-- ==================== MÊS EXTRA ==================== -->
-<details class="month" data-month="extra">
-  <summary>
-    <div class="m-title">
-      <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none">
-        <path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/>
-      </svg>
-      <div>
-        <h2>Mês Extra – Estudos Avançados & Pesquisa Contínua</h2>
-        <div class="goal">Meta: se manter atualizado, explorar novas técnicas e expandir habilidades além do cheat tradicional.</div>
-      </div>
-    </div>
-    <div class="muted">Semanas 25+</div>
-  </summary>
-  <div class="weeks">
-
-    <!-- Semana X1 -->
-    <section class="week" data-week="x1">
-      <div class="w-head">
-        <div class="w-title"><h3>Pesquisa de Exploits e Vulnerabilidades</h3>
-          <div class="tags"><span class="tag">Reversing</span><span class="tag">Exploits</span><span class="tag">CVE</span></div>
+    <!-- ==================== MÓDULO 2025 – Persistência e Loaders Modernos ==================== -->
+    <!-- Técnicas atuais para manter cheats carregáveis mesmo após reinício,
+         usando autenticação segura, HWID dinâmico e métodos fileless.
+         Muito usado para manter bypass ativo por mais tempo. -->
+    <details class="month" data-month="modern-loaders">
+      <summary>
+        <div class="m-title">
+          <svg class="caret" width="16" height="16"><path d="M8 5l8 7-8 7" stroke="#a4b2cc" stroke-width="1.8"/></svg>
+          <div>
+            <h2>Módulo 2025 – Persistência e Loaders Modernos</h2>
+            <div class="goal">Métodos seguros de carregamento e autenticação em 2025.</div>
+          </div>
         </div>
-        <div class="links">
-          <a href="https://cve.mitre.org/" target="_blank" rel="noopener">CVE Database</a>
-          <a href="https://www.exploit-db.com/" target="_blank" rel="noopener">Exploit-DB</a>
-        </div>
+        <div class="muted">Semanas L1–L2</div>
+      </summary>
+      <div class="weeks">
+        <section class="week" data-week="L1">
+          <div class="w-head"><div class="w-title"><h3>Semana L1 – Arquitetura segura</h3></div></div>
+          <div class="tasks">
+            <label class="task"><input type="checkbox" /><div>Design modular com comunicação segura</div></label>
+            <label class="task"><input type="checkbox" /><div>Autenticação multifator + HWID dinâmico</div></label>
+          </div>
+        </section>
+        <section class="week" data-week="L2">
+          <div class="w-head"><div class="w-title"><h3>Semana L2 – Persistência stealth</h3></div></div>
+          <div class="tasks">
+            <label class="task"><input type="checkbox" /><div>Carregamento sob demanda para reduzir footprint</div></label>
+            <label class="task"><input type="checkbox" /><div>Uso de técnicas fileless e memória transiente</div></label>
+          </div>
+        </section>
       </div>
-      <div class="tasks">
-        <label class="task"><input type="checkbox" /><div>Monitorar vulnerabilidades em engines de jogos</div><small class="muted">Unity, Unreal, CryEngine.</small></label>
-        <label class="task"><input type="checkbox" /><div>Estudar PoCs (Proof of Concept) para entender vetores</div><small class="muted">Exploração controlada em VM.</small></label>
-      </div>
-    </section>
-
-    <!-- Semana X2 -->
-    <section class="week" data-week="x2">
-      <div class="w-head">
-        <div class="w-title"><h3>Machine Learning aplicado a Cheats</h3>
-          <div class="tags"><span class="tag">AI</span><span class="tag">Computer Vision</span></div>
-        </div>
-        <div class="links">
-          <a href="https://opencv.org/" target="_blank" rel="noopener">OpenCV</a>
-          <a href="https://www.tensorflow.org/" target="_blank" rel="noopener">TensorFlow</a>
-        </div>
-      </div>
-      <div class="tasks">
-        <label class="task"><input type="checkbox" /><div>Criar aim assist por reconhecimento de imagem</div><small class="muted">Detecção de inimigos via captura de tela.</small></label>
-        <label class="task"><input type="checkbox" /><div>Treinar modelo simples para classificação de objetos</div><small class="muted">Dataset custom de HUDs e inimigos.</small></label>
-      </div>
-    </section>
-
-    <!-- Semana X3 -->
-    <section class="week" data-week="x3">
-      <div class="w-head">
-        <div class="w-title"><h3>Networking e Packet Manipulation</h3>
-          <div class="tags"><span class="tag">Packets</span><span class="tag">Proxy</span><span class="tag">MITM</span></div>
-        </div>
-        <div class="links">
-          <a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a>
-          <a href="https://www.google.com/search?q=python+socket+proxy+site%3Aguidedhacking.com" target="_blank" rel="noopener">Python Packet Proxy — GH</a>
-        </div>
-      </div>
-      <div class="tasks">
-        <label class="task"><input type="checkbox" /><div>Analisar pacotes de rede</div><small class="muted">Filtro para protocolos de jogos.</small></label>
-        <label class="task"><input type="checkbox" /><div>Criar proxy intermediário</div><small class="muted">Interceptar e alterar pacotes (laboratório).</small></label>
-      </div>
-    </section>
-
-    <!-- Semana X4 -->
-    <section class="week" data-week="x4">
-      <div class="w-head">
-        <div class="w-title"><h3>Automação e Ferramentas Custom</h3>
-          <div class="tags"><span class="tag">Tool Dev</span><span class="tag">Debugging</span></div>
-        </div>
-        <div class="links">
-          <a href="https://www.autoitscript.com/site/" target="_blank" rel="noopener">AutoIt</a>
-          <a href="https://pyautogui.readthedocs.io/en/latest/" target="_blank" rel="noopener">PyAutoGUI</a>
-        </div>
-      </div>
-      <div class="tasks">
-        <label class="task"><input type="checkbox" /><div>Criar scripts de automação</div><small class="muted">Testes, grind, repetição de ações.</small></label>
-        <label class="task"><input type="checkbox" /><div>Desenvolver ferramentas próprias</div><small class="muted">Dump parser, visualizador de offsets.</small></label>
-      </div>
-    </section>
-
-  </div>
-</details>
+    </details>
 
 
     <footer>
-      Feito para estudo. Tema escuro, progresso salvo localmente. — Atualize e expanda conforme seu workflow (ex.: adicionar links pessoais).
+      Feito para estudo. Tema escuro, progresso salvo localmente. — Expandido com conteúdos 2025.
     </footer>
   </main>
 </div>
-
 <script>
-(() => {
-  const STORAGE_KEY = "gh_plan_progress_v1";
-
-  // Utilities
-  const qs  = (sel, el=document)=>el.querySelector(sel);
-  const qsa = (sel, el=document)=>[...el.querySelectorAll(sel)];
-
-  // Persist state
-  function loadState(){
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}"); } catch{ return {}; }
-  }
-  function saveState(state){
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  }
-
-  // Initialize
-  const state = loadState();
-
-  // Attach IDs to tasks and notes
-  let taskIndex = 0;
-  qsa(".week").forEach(week => {
-    const wKey = week.dataset.week;
-    qsa('.task input[type="checkbox"]', week).forEach(chk=>{
-      const id = `w${wKey}-t${taskIndex++}`;
-      chk.dataset.id = id;
-      chk.checked = !!state[id];
+// =====================
+// Persistência do progresso no localStorage
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+  const tasks = document.querySelectorAll(".task input[type='checkbox']");
+  const months = document.querySelectorAll(".month");
+  
+  // Carregar progresso salvo
+  tasks.forEach((checkbox, idx) => {
+    const saved = localStorage.getItem(`task-${idx}`);
+    if (saved === "true") checkbox.checked = true;
+    checkbox.addEventListener("change", () => {
+      localStorage.setItem(`task-${idx}`, checkbox.checked);
+      updateCounters();
     });
-    const note = qs("textarea", week);
-    if(note){
-      const nid = `note-${wKey}`;
-      note.dataset.id = nid;
-      if(state[nid]) note.value = state[nid];
-      note.addEventListener("input", e=>{
-        state[nid] = e.target.value;
-        saveState(state);
-        updateMeta();
-      });
+  });
+
+  // Salvar estado aberto/fechado dos módulos
+  months.forEach((month, idx) => {
+    const savedState = localStorage.getItem(`month-${idx}-open`);
+    if (savedState === "true") month.setAttribute("open", "");
+    else if (savedState === "false") month.removeAttribute("open");
+
+    month.querySelector("summary").addEventListener("click", () => {
+      const isOpen = month.hasAttribute("open");
+      localStorage.setItem(`month-${idx}-open`, isOpen);
+    });
+  });
+
+  updateCounters();
+});
+
+// =====================
+// Atualiza contadores no título dos módulos
+// =====================
+function updateCounters() {
+  document.querySelectorAll(".month").forEach(month => {
+    const checkboxes = month.querySelectorAll(".task input[type='checkbox']");
+    const checked = [...checkboxes].filter(cb => cb.checked).length;
+    const summary = month.querySelector(".muted");
+    if (summary) summary.textContent = `${checked}/${checkboxes.length} concluídas`;
+  });
+}
+
+// =====================
+// Filtro de tarefas (todas / concluídas / pendentes)
+// =====================
+function setFilter(mode) {
+  document.querySelectorAll(".week").forEach(week => {
+    const tasks = week.querySelectorAll(".task input[type='checkbox']");
+    const allDone = [...tasks].every(cb => cb.checked);
+    const anyDone = [...tasks].some(cb => cb.checked);
+
+    if (mode === "all") {
+      week.style.display = "";
+    } else if (mode === "done") {
+      week.style.display = allDone ? "" : "none";
+    } else if (mode === "pending") {
+      week.style.display = anyDone && !allDone ? "" : "none";
     }
   });
+}
 
-  // Handlers: checkbox change
-  qsa('.task input[type="checkbox"]').forEach(chk=>{
-    chk.addEventListener("change", e=>{
-      const id = e.target.dataset.id;
-      state[id] = e.target.checked;
-      saveState(state);
-      updateMeta();
-      applyFilters(); // refresh status filter
-    });
+// =====================
+// Exportar/Importar progresso
+// =====================
+function exportProgress() {
+  const data = {};
+  document.querySelectorAll(".task input[type='checkbox']").forEach((cb, idx) => {
+    data[`task-${idx}`] = cb.checked;
   });
+  const blob = new Blob([JSON.stringify(data)], {type: "application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "progresso.json";
+  a.click();
+}
 
-  // Bulk buttons
-  qs("#btn-mark-all").addEventListener("click", ()=>{
-    qsa('.task input[type="checkbox"]').forEach(chk=>{
-      chk.checked = true; state[chk.dataset.id] = true;
-    });
-    saveState(state); updateMeta(); applyFilters();
-  });
-  qs("#btn-clear-all").addEventListener("click", ()=>{
-    qsa('.task input[type="checkbox"]').forEach(chk=>{
-      chk.checked = false; state[chk.dataset.id] = false;
-    });
-    saveState(state); updateMeta(); applyFilters();
-  });
-  qs("#btn-reset").addEventListener("click", ()=>{
-    if(!confirm("Isso apagará TODO o progresso salvo neste navegador. Continuar?")) return;
-    localStorage.removeItem(STORAGE_KEY); location.reload();
-  });
-
-  // Export/Import
-  qs("#btn-export").addEventListener("click", ()=>{
-    const data = JSON.stringify(loadState(), null, 2);
-    const blob = new Blob([data], {type:"application/json"});
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "progresso_game_hacking.json";
-    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
-  });
-  qs("#file-import").addEventListener("change", (e)=>{
-    const file = e.target.files?.[0];
-    if(!file) return;
-    const reader = new FileReader();
-    reader.onload = ()=>{
-      try{
-        const obj = JSON.parse(reader.result);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-        alert("Progresso importado com sucesso! Recarregando...");
-        location.reload();
-      }catch(err){ alert("Arquivo inválido."); }
-    };
-    reader.readAsText(file);
-  });
-
-  // Search helpers (sidebar)
-  const searchInput = qs("#global-search");
-  qsa(".searchquick .btn").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      const term = encodeURIComponent(searchInput.value.trim());
-      const base = btn.dataset.engine;
-      if(!term){ searchInput.focus(); return; }
-      let url = "https://www.google.com/search?q="+term;
-      if(base==="unknown") url = "https://www.google.com/search?q="+term+"+site%3Aunknowncheats.me";
-      if(base==="gh") url = "https://www.google.com/search?q="+term+"+site%3Aguidedhacking.com";
-      if(base==="so") url = "https://stackoverflow.com/search?q="+term;
-      if(base==="bing") url = "https://www.bing.com/search?q="+term;
-      window.open(url, "_blank", "noopener");
-    });
-  });
-
-  // Filters
-  const fMonth  = qs("#filter-month");
-  const fStatus = qs("#filter-status");
-  const fText   = qs("#filter-text");
-
-  fMonth.addEventListener("change", applyFilters);
-  fStatus.addEventListener("change", applyFilters);
-  fText.addEventListener("input",  applyFilters);
-
-  function applyFilters(){
-    const monthVal = fMonth.value;
-    const statusVal = fStatus.value;
-    const textVal = fText.value.toLowerCase().trim();
-
-    qsa("details.month").forEach(month=>{
-      const m = month.dataset.month;
-      // Month filter
-      const monthMatch = monthVal === "all" || monthVal === m;
-
-      // Week-level visibility
-      let visibleWeeks = 0;
-      qsa(".week", month).forEach(week=>{
-        const tasks = qsa('.task input[type="checkbox"]', week);
-        const done = tasks.length>0 && tasks.every(t=>t.checked);
-        const hasOpen = tasks.some(t=>!t.checked);
-
-        // Status filter
-        const statusMatch = statusVal === "any" ||
-                            (statusVal==="done" && done) ||
-                            (statusVal==="open" && hasOpen);
-
-        // Text filter
-        const textBlob = week.innerText.toLowerCase();
-        const textMatch = !textVal || textBlob.includes(textVal);
-
-        const show = monthMatch && statusMatch && textMatch;
-        week.style.display = show ? "" : "none";
-        if(show) visibleWeeks++;
-      });
-
-      // Hide entire month if no visible weeks
-      month.style.display = (visibleWeeks>0 && monthMatch) ? "" : "none";
-    });
-  }
-
-  // KPI meta
-  function updateMeta(){
-    const allTasks = qsa('.task input[type="checkbox"]');
-    const doneTasks = allTasks.filter(c=>c.checked);
-    qs("#meta-done").textContent = doneTasks.length;
-    qs("#meta-total").textContent = allTasks.length;
-    const pct = allTasks.length ? Math.round((doneTasks.length/allTasks.length)*100) : 0;
-    qs("#meta-bar").style.width = pct + "%";
-  }
-
-  // Keyboard shortcuts
-  document.addEventListener("keydown", (e)=>{
-    // "/" focus search
-    if(e.key === "/" && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA"){
-      e.preventDefault(); searchInput.focus();
+function importProgress(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      for (let key in data) {
+        localStorage.setItem(key, data[key]);
+      }
+      location.reload();
+    } catch (err) {
+      alert("Arquivo inválido");
     }
-    // "f" focus filter text
-    if(e.key.toLowerCase()==="f" && (e.ctrlKey || e.metaKey)){
-      e.preventDefault(); qs("#filter-text").focus();
-    }
-  });
+  };
+  reader.readAsText(file);
+}
 
-  // Open first month if none open
-  const opened = qsa("details.month[open]");
-  if(opened.length===0){ const first = qs("details.month"); if(first) first.open = true; }
-
-  // Initial
-  applyFilters();
-  updateMeta();
-})();
+// =====================
+// Botões de controle na página
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+  const controls = document.createElement("div");
+  controls.style.cssText = "position:fixed;bottom:10px;right:10px;background:#111;padding:8px;border-radius:6px;font-size:14px;z-index:999;";
+  controls.innerHTML = `
+    <button onclick="setFilter('all')">Todas</button>
+    <button onclick="setFilter('done')">Concluídas</button>
+    <button onclick="setFilter('pending')">Pendentes</button>
+    <button onclick="exportProgress()">Exportar</button>
+    <label style="cursor:pointer;">
+      Importar<input type="file" style="display:none;" onchange="importProgress(this.files[0])">
+    </label>
+  `;
+  document.body.appendChild(controls);
+});
 </script>
+
 </body>
 </html>
-
-
